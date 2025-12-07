@@ -6,7 +6,7 @@ on:
     branches:
       - RTX-on
     paths:
-      - '**/feelsweakman.gif'
+      - '**/ripbozo.gif'
 
 jobs:
   coalesce:
