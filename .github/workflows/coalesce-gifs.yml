@@ -22,7 +22,7 @@ jobs:
       - name: Coalesce GIF files
         run: |
           # Find the specific GIF file
-          find . -type f -name "feelsweakman.gif" | while read gif; do
+          find . -type f -name "ripbozo.gif" | while read gif; do
             echo "Processing: $gif"
 
             # Check if GIF has multiple frames
