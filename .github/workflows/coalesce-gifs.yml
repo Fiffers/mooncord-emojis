@@ -6,7 +6,8 @@ on:
     branches:
       - RTX-on
     paths:
-      - '**/ripbozo.gif'
+      - '**.gif'
+      - '**.GIF'
 
 jobs:
   coalesce:
@@ -21,8 +22,8 @@ jobs:
 
       - name: Coalesce GIF files
         run: |
-          # Find the specific GIF file
-          find . -type f -name "ripbozo.gif" | while read gif; do
+          # Find all GIF files
+          find . -type f \( -iname "*.gif" \) | while read gif; do
             echo "Processing: $gif"
 
             # Check if GIF has multiple frames
@@ -34,8 +35,8 @@ jobs:
               # Create temp file
               temp_file="${gif}.tmp"
 
-              # Coalesce the GIF and force background disposal for each frame
-              convert "$gif" -coalesce -dispose Background +repage "$temp_file"
+              # Coalesce the GIF (combines partial frames into complete frames)
+              convert "$gif" -coalesce "$temp_file"
 
               if [ -f "$temp_file" ]; then
                 mv "$temp_file" "$gif"
