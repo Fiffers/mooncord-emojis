@@ -34,8 +34,8 @@ jobs:
               # Create temp file
               temp_file="${gif}.tmp"
 
-              # Coalesce the GIF (combines partial frames into complete frames)
-              convert "$gif" -coalesce "$temp_file"
+              # Coalesce the GIF and force background disposal for each frame
+              convert "$gif" -coalesce -dispose Background +repage "$temp_file"
 
               if [ -f "$temp_file" ]; then
                 mv "$temp_file" "$gif"
