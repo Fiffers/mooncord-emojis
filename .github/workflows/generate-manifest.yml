@@ -2,12 +2,20 @@ name: Generate Emoji Pack Manifest
 
 on:
   push:
+    branches:
+      - RTX-On
     paths:
       - '**.png'
       - '**.jpg'
       - '**.jpeg'
       - '**.gif'
   workflow_dispatch:
+
+env:
+  PACK_NAME: "mooncord-emojis"
+  PACK_VERSION: "1.0.0"
+  PACK_AUTHOR: "Fiffers"
+  PACK_DESCRIPTION: "Mooncord emoji pack for RuneLite Custom Emoji plugin"
 
 jobs:
   generate-manifest:
@@ -18,15 +26,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: RTX-On
 
       - name: Generate pack.json manifest
         run: |
-          # Configuration - edit these values for your pack
-          PACK_NAME="${PACK_NAME:-$(basename $GITHUB_REPOSITORY)}"
-          PACK_VERSION="${PACK_VERSION:-1.0.0}"
-          PACK_AUTHOR="${PACK_AUTHOR:-$GITHUB_REPOSITORY_OWNER}"
-          PACK_DESCRIPTION="${PACK_DESCRIPTION:-Custom emoji pack for RuneLite}"
-
           echo "Generating manifest for pack: $PACK_NAME"
 
           # Find all image files and generate emoji entries
@@ -87,19 +91,25 @@ jobs:
           fi
 
           echo "Manifest generated successfully"
-          cat pack.json
+          echo "Total emojis: $(jq '.emojis | length' pack.json)"
 
       - name: Commit manifest
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
 
-          # Check if pack.json changed
-          if git diff --quiet pack.json 2>/dev/null; then
+          # Check if pack.json exists and changed, or is new
+          if [ ! -f pack.json ]; then
+            echo "No pack.json generated"
+            exit 0
+          fi
+
+          git add pack.json
+
+          if git diff --cached --quiet; then
             echo "No changes to manifest"
           else
-            git add pack.json
             git commit -m "Update pack.json manifest [skip ci]"
-            git push
-            echo "Manifest committed and pushed"
+            git push origin RTX-On
+            echo "Manifest committed and pushed to RTX-On branch"
           fi
