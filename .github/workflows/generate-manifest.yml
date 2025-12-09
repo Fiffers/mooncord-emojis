@@ -110,6 +110,6 @@ jobs:
             echo "No changes to manifest"
           else
             git commit -m "Update pack.json manifest [skip ci]"
-            git push origin RTX-On
-            echo "Manifest committed and pushed to RTX-On branch"
+            git push origin main
+            echo "Manifest committed and pushed to main branch"
           fi
