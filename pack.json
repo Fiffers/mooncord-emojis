@@ -835,6 +835,11 @@
       "sha": "80d3fac3a8c00062f5338f2c92b9c614b0eb75760fe123e470b52216f15a7fa0"
     },
     {
+      "name": "fuckdwaters.gif",
+      "path": "Animated/fuckdwaters.gif",
+      "sha": "1b1314936fbc836c9d308dde95a28a7cfc3ceb0a10678852ba130e7170c6eae8"
+    },
+    {
       "name": "fuckyoufuckyou.gif",
       "path": "Animated/fuckyoufuckyou.gif",
       "sha": "535376d35656a75c26c659298b6e7cbb5d8b8d54ce90ec6ab49a2693b28bd558"
@@ -3100,6 +3105,11 @@
       "sha": "a09c8d651b21d25832fce1499253bf60b065584d8f3e9745e885ba17192e6700"
     },
     {
+      "name": "classic.gif",
+      "path": "MOONMOON/7TV/classic.gif",
+      "sha": "d3db3fa096538cb59d4b37d5ca6c5b467411c9b7b6b2594773fa7dea5b19c6b1"
+    },
+    {
       "name": "clown00.png",
       "path": "MOONMOON/7TV/clown00.png",
       "sha": "74e0178d0d4c1ba836708ae780c020ed2a19bd2a5482312ba7138561e768e5ce"
@@ -4020,6 +4030,11 @@
       "sha": "35dc2eb07cfc240a5870cf6074e2dcfc2d407cdabde3329ea50c7fa006da1007"
     },
     {
+      "name": "joel.gif",
+      "path": "MOONMOON/BTTV/joel.gif",
+      "sha": "f66219cd217f8345afc72caa630439dfe48457e343f149d2ea8817c5dc8ff171"
+    },
+    {
       "name": "kawaii.png",
       "path": "MOONMOON/BTTV/kawaii.png",
       "sha": "8e48957b166e37e516bdd7d1e528fb6234e16327945241071285d8aa7dd20f55"
@@ -4083,6 +4098,11 @@
       "name": "madgay.png",
       "path": "MOONMOON/BTTV/madgay.png",
       "sha": "9fb8ef35466d2779452c943e1013110eddb887b1c43157c64925dd4d324dfe6f"
+    },
+    {
+      "name": "minorspellingmistake.gif",
+      "path": "MOONMOON/BTTV/minorspellingmistake.gif",
+      "sha": "145ebc2756ab74781ff7589c9b01250454a3843cd62ccbdeb44de19a218ea28e"
     },
     {
       "name": "mugshotofdonaldtrump.png",
