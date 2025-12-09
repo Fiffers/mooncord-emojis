@@ -3,6 +3,7 @@ name: Generate Emoji Pack Manifest
 on:
   push:
     branches:
+      - main
       - RTX-On
     paths:
       - '**.png'
