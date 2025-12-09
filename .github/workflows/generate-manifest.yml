@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - RTX-On
     paths:
       - '**.png'
       - '**.jpg'
@@ -28,7 +27,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: RTX-On
+          ref: main
 
       - name: Generate pack.json manifest
         run: |
